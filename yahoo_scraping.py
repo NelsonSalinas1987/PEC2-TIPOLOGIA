@@ -8,7 +8,7 @@ from datetime import datetime
 import pandas as pd
 
 
-def scraping_symbol(driver, prices, symbol, name):
+def scraping_symbol(driver, prices, symbol, sname):
     # introducimos el símbolo
     WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                                "input[name='yfin-usr-qry']"))) \
@@ -44,18 +44,19 @@ def scraping_symbol(driver, prices, symbol, name):
     # recorremos la lista
     for l in tabla_precios.split('\n')[1:-1]:
         fields = l.split(' ')
-        save_price(prices, name, fields)
+        save_price(prices, sname, fields)
 
 
 # función para actualizar o crear
 # fila en el dataframe de precios
-def save_price(prices, name, fields):
-    fecha = fields[0] + '/' + meses[fields[1]] + '/' + fields[2]
-    linea = prices.loc[(prices['name'] == name) & (prices['date'] == fecha)]
-    #if (linea.empty() == True):
-    #    linea = len(prices)
-    prices.loc[len(prices)] = [name, fecha, fields[3], fields[4], fields[5], fields[6], fields[7], fields[8]]
-
+def save_price(prices, n, f):
+    fecha = f[0] + '/' + meses[f[1]] + '/' + f[2]
+    linea = prices.loc[(prices['name'] == n) & (prices['date'] == fecha)]
+    if linea.empty:
+        prices.loc[len(prices)] = [n, fecha, f[3].replace(',','.'), f[4].replace(',','.'), f[5].replace(',','.'),
+                                   f[6].replace(',','.'), f[7].replace(',','.'), f[8].replace('.','')]
+    else:
+        linea['open'] = f[3].replace(',','.')
 
 def start():
     symbols = pd.read_csv('symbols.csv', header=0)
@@ -83,8 +84,8 @@ def start():
 
     # recorremos los símbolos a guardar
     for index, row in symbols.iterrows():
-        print('inicio' + row.symbol)
-        scraping_symbol(driver, prices, row.symbol, row.name)
+        print('inicio: ' + row.symbol)
+        scraping_symbol(driver, prices, row[0], row[1])
 
     prices.to_csv('historical_prices.csv', index=False)
 
