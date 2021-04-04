@@ -12,7 +12,7 @@ En esta práctica se elabora un caso práctico orientado a aprender a identifica
 2. SALINAS VARAS NELSON
 
 ## 1.- Contexto
-El desarrollo de este trabajo se basa dentro del marco de analísis de informacion de cotizaciones historicas (1 año) de comodities tales como el oro, plata y petróleo con el fin de poder analizar la correlación que existen entre dichas variables y tener una mejor visión en la toma de decisiones para la inversión a largo plazo. La web donde se obtendran los datos es Yahoo Finanzas https://es.finance.yahoo.com/
+El desarrollo de este trabajo se basa dentro del marco de analísis de informacion de cotizaciones historicas (4 meses) de comodities tales como el arroz, soya, oro, plata y petróleo con el fin de poder analizar la correlación que existen entre dichas variables y tener una mejor visión en la toma de decisiones para la inversión a largo plazo. La web donde se obtendran los datos es Yahoo Finanzas https://es.finance.yahoo.com/
 
 ## 2.- Dataset
 Su nombre se destaca como valores históricos de commodities en la bolsa de valores.
