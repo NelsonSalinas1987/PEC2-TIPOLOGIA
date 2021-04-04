@@ -29,15 +29,28 @@ Los demas commodities que se encuentran en el dataset, tendran una representaci�
 Su nombre se destaca como valores históricos de commodities en la bolsa de valores.
 
 ## 3.- Descripción del Dataset
-El dataset comprende valores historicos para cada commoditie con la finalidad que sea utilizado por el lenguaje R, para fines de analisis de correlación de variables, se toma en consideracion el valor de precio de cierre del mercado.
+El dataset comprende valores históricos para cada commoditie con la finalidad que sea utilizado por el lenguaje R, para fines de analisis con herramientas de predicción de datos, se toma en consideracion el valor de precio de cierre del mercado.
 
 ## 4.- Representación gráfica
 Utilizacion de lenguaje R, se adjunta documento .rmd en pdf.
 
 ## 5.- Contenido
+El dataset comprende de varias columnas tales como:
+1. Name: Hace referencia a las materias primas que fueron extraidas de la base de informacion de Yahoo Finanzas.
+2. Date: Esta variable refleja el movimiento en el tiempo de cada materia prima, muy útil para la representación de series temporales.
+3. Open: Comprende el valor de apertura que tuvo en el mercado de valores.
+4. Max: Hace referencia al valor máximo del precio.
+5. Min: Hace referencia al valor mínimo del precio.
+6. Close: Representa el precio con el que cerro en el mercado.
+7. AdjClose: Indica el precio de cierre ajustado.
+8. Volume: Representa la fuerza que tuvo el precio en un determinado tiempo, muy util para determina si es alcista o bajista.
+
+El periodo de tiempo en el que se recopilo la información es desde 05/11/2021 al 31/03/2021, lo que corresponde aproximandame 4 meses. Para la recopilación de los datos se uso las técnicas de web scraping, ademas como complementos en Python se integro Selenium y el driver de Google Chrome.
 
 ## 6.- Agradecimientos
-Referencia a los texto leido, por completar!!
+Damos gracias a Yahoo Finanzas por darnos la oportunidad de poder extraer de forma automática los datos de las materias primas para el desarrollo de este trabajo. Es válido destacar que los mismos datos pueden ser obtenidos por otras fuentes según las necesidades del analista. 
+
+Además, en vista a las previas investigaciones realizadas sobre los mercados bursatiles, ya se puede tener mayor confianza en que el desarrollo de la inteligencia artificial y anaálisis datos, puede generar un apoyo mas concreto al tomar una decisión para la inversión en bolsa, tomando como cita lo siguiente: "Según estimaciones de Nearshore Delivery Solutions, hasta un 30% de las decisiones financieras podrían llegar a tomarse con esta tecnología." Citado de: https://pulsosocial.com/2018/02/14/la-inteligencia-artificial-ya-puede-predecir-comportamiento-la-bolsa/, esto sin lugar a duda genera un impacto dentro del mundo de la bolsa de valores y genera una aportación sustancial a los procesos de automatización como es el scraping.
 
 ## 7.- Inspiración
 Referencia a los texto leido, por completar!!
