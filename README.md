@@ -63,3 +63,4 @@ Se considera necesario el aporte de otras personas que puedan crear mayor conoci
 Se adjunta el codigo en lenguaje Python y R.
 
 ## 10.- DOI Dataset
+DOI: 10.5281/zenodo.4662174
