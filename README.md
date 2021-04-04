@@ -48,12 +48,10 @@ El dataset comprende de varias columnas tales como:
 El periodo de tiempo en el que se recopilo la información es desde 05/11/2021 al 31/03/2021, lo que corresponde aproximandame 4 meses. Para la recopilación de los datos se uso las técnicas de web scraping, ademas como complementos en Python se integro Selenium y el driver de Google Chrome.
 
 ## 6.- Agradecimientos
-Damos gracias a Yahoo Finanzas por darnos la oportunidad de poder extraer de forma automática los datos de las materias primas para el desarrollo de este trabajo. Es válido destacar que los mismos datos pueden ser obtenidos por otras fuentes según las necesidades del analista. 
-
-Además, en vista a las previas investigaciones realizadas sobre los mercados bursatiles, ya se puede tener mayor confianza en que el desarrollo de la inteligencia artificial y anaálisis datos, puede generar un apoyo mas concreto al tomar una decisión para la inversión en bolsa, tomando como cita lo siguiente: "Según estimaciones de Nearshore Delivery Solutions, hasta un 30% de las decisiones financieras podrían llegar a tomarse con esta tecnología." Citado de: https://pulsosocial.com/2018/02/14/la-inteligencia-artificial-ya-puede-predecir-comportamiento-la-bolsa/, esto sin lugar a duda genera un impacto dentro del mundo de la bolsa de valores y genera una aportación sustancial a los procesos de automatización como es el scraping.
+Damos gracias a Yahoo Finanzas por darnos la oportunidad de poder extraer de forma automática los datos de las materias primas para el desarrollo de este trabajo. Es válido destacar que los mismos datos pueden ser obtenidos por otras fuentes según las necesidades del analista. Además debido a los constantes cambios tecnológicos, ya la inteligencia artificial en base al analisis de datos predictivos, está tomando lugar dentro del mercado bursátil.
 
 ## 7.- Inspiración
-Referencia a los texto leido, por completar!!
+En vista a las previas investigaciones realizadas sobre los mercados bursatiles, ya se puede tener mayor confianza en que el desarrollo de la inteligencia artificial y análisis datos, puede generar un apoyo mas concreto al tomar una decisión para la inversión en bolsa, tomando como cita lo siguiente: "Según estimaciones de Nearshore Delivery Solutions, hasta un 30% de las decisiones financieras podrían llegar a tomarse con esta tecnología." Citado de: https://pulsosocial.com/2018/02/14/la-inteligencia-artificial-ya-puede-predecir-comportamiento-la-bolsa/, esto sin lugar a duda genera un impacto dentro del mundo de la bolsa de valores y genera una aportación sustancial a los procesos de automatización como es el scraping.
 
 ## 8.- Licencia
 
