@@ -32,7 +32,7 @@ Su nombre se destaca como valores históricos de commodities en la bolsa de valo
 El dataset comprende valores históricos para cada commoditie con la finalidad que sea utilizado por el lenguaje R, para fines de analisis con herramientas de predicción de datos, se toma en consideracion el valor de precio de cierre del mercado.
 
 ## 4.- Representación gráfica
-Utilizacion de lenguaje R, se adjunta documento .rmd en pdf.
+Se dará uso del lenguaje R para el analisis de series temporales y predicción de modelos con regresión lineal simple.
 
 ## 5.- Contenido
 El dataset comprende de varias columnas tales como:
@@ -54,7 +54,12 @@ Damos gracias a Yahoo Finanzas por darnos la oportunidad de poder extraer de for
 En vista a las previas investigaciones realizadas sobre los mercados bursatiles, ya se puede tener mayor confianza en que el desarrollo de la inteligencia artificial y análisis datos, puede generar un apoyo mas concreto al tomar una decisión para la inversión en bolsa, tomando como cita lo siguiente: "Según estimaciones de Nearshore Delivery Solutions, hasta un 30% de las decisiones financieras podrían llegar a tomarse con esta tecnología." Citado de: https://pulsosocial.com/2018/02/14/la-inteligencia-artificial-ya-puede-predecir-comportamiento-la-bolsa/, esto sin lugar a duda genera un impacto dentro del mundo de la bolsa de valores y genera una aportación sustancial a los procesos de automatización como es el scraping.
 
 ## 8.- Licencia
+El tipo de licencia seleccionado es Released Under CC0: Public Domain License.
+
+### Motivos:
+Se considera necesario el aporte de otras personas que puedan crear mayor conocimiento en base a lo ya analizado, con el fin de motivar al desarrollo de mejores analisis y la distribución del conocimiento entre los interesados.
 
 ## 9.- Código
+Se adjunta el codigo en lenguaje Python y R.
 
 ## 10.- DOI Dataset
