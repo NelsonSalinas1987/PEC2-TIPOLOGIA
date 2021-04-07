@@ -8,12 +8,16 @@ import pandas as pd
 import sys
 import time
 
-## función que realiza el scraping del simbolo indicado
-#   driver: driver de chrome abierto para el scraping
-#   prices: dataframe donde se van a guardar los precios
-#   symbol: símbolo de yahoo a buscar
-#   sname: nombre del símbolo que se guardará en el dataset
+
 def scraping_symbol(driver, prices, symbol, sname):
+    """ función que realiza el scraping del simbolo indicado
+
+    :param driver: driver de chrome abierto para el scraping
+    :param prices: dataframe donde se van a guardar los precios
+    :param symbol: str símbolo de yahoo a buscar
+    :param sname: str nombre del símbolo que se guardará en el dataset
+    :return: none
+    """
     try:
         # reseteamos por si venimos de error
         driver.get('https://es.finance.yahoo.com/materias-primas')
@@ -49,11 +53,14 @@ def scraping_symbol(driver, prices, symbol, sname):
         print(sys.exc_info())
 
 
-## función para actualizar o crear fila en el dataframe de precios
-#   prices: dataframe donde guardar los precios
-#   n: nombre del símbolo a guardar
-#   f: array de los campos extraídos en la tabla de yahoo
 def save_price(prices, n, f):
+    """ función para actualizar o crear fila en el dataframe de precios
+
+    :param prices: dataframe donde guardar los precios
+    :param n: str nombre del símbolo a guardar
+    :param f: str[] array de los campos extraídos en la tabla de yahoo
+    :return: none
+    """
     # componemos la fecha que viene separada en dia mes(texto) y año
     fecha = f[0] + '/' + meses[f[1]] + '/' + f[2]
     # buscamos si ya existe en nuestro dataframe
@@ -70,17 +77,23 @@ def save_price(prices, n, f):
         linea['volume'] = s_to_n(f[8])
 
 
-## función para convertir los campos numéricos en formato americano
-#   sfield: campo en formato texto
 def s_to_n(sfield):
+    """ función para convertir los campos numéricos en formato americano
+
+    :param sfield: str campo en formato texto
+    :return: str capaz de se un double
+    """
     if sfield == '-': # si viene un guión, devolvemos nulo
         return None
     else: # quitamos puntos y sustituimos comas por punto
         return sfield.replace('.','').replace(',','.')
 
 
-## función principal
 def start():
+    """ función principal
+
+    :return: none
+    """
     # cargamos los símbolos a recuperar
     symbols = pd.read_csv('../data/symbols.csv', header=0)
     # fichero a generar
