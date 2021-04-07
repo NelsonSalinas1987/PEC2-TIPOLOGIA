@@ -4,22 +4,25 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from pathlib import Path
-from datetime import datetime
 import pandas as pd
 import sys
+import time
 
 def scraping_symbol(driver, prices, symbol, sname):
     try:
         # reseteamos por si venimos de error
         driver.get('https://es.finance.yahoo.com/materias-primas')
+        time.sleep(1)
         # introducimos el símbolo
         WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                                    "input#yfin-usr-qry"))) \
             .send_keys(symbol)
+        time.sleep(1)
         # pulsamos el primer resultado de la lista
         WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                                    'div[role="link"][data-test="srch-sym"]'))) \
             .click()
+        time.sleep(1)
         # esperamos hasta que el titulo contenga el símbolo buscado
         WebDriverWait(driver, 10).until(EC.title_contains(symbol))
 
@@ -27,6 +30,7 @@ def scraping_symbol(driver, prices, symbol, sname):
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,
                                                                    '/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[5]/section/div/ul/li[3]/a'))) \
             .click()
+        time.sleep(1)
         # esperamos a que se cargue la tabla de precios
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,
                                                                    '/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[2]/section/div[2]/table')))
@@ -84,11 +88,11 @@ def start():
     driver = webdriver.Chrome(driver_path, chrome_options=options)
     # entramos en la página inicial de materias primas
     driver.get('https://es.finance.yahoo.com/materias-primas')
+    time.sleep(1)
     # aceptamos la cookies
     WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                                'button.btn.primary'))) \
         .click()
-
     # recorremos los símbolos a guardar
     for index, row in symbols.iterrows():
         print('inicio: ' + row[1] + '->' + row[0])
