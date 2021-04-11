@@ -63,3 +63,23 @@ Se adjunta el codigo en lenguaje Python y R.
 ## 10.- DOI Dataset
 DOI: 10.5281/zenodo.4662174
 Zenodo. http://doi.org/10.5281/zenodo.4662174
+
+<table>
+  <tr>
+    <th>Contribuciones</th>
+    <th>Firmas</th>
+  </tr>
+  <tr>
+    <td>Contribuciones</td>
+    <td>Firmas</td>
+  </tr>
+  <tr>
+    <td>Contribuciones</td>
+    <td>Firmas</td>
+  </tr>
+  <tr>
+    <td>Contribuciones</td>
+    <td>Firmas</td>
+  </tr>  
+</table>
+
