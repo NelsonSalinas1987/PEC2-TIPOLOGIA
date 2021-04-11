@@ -70,16 +70,16 @@ Zenodo. http://doi.org/10.5281/zenodo.4662174
     <th>Firmas</th>
   </tr>
   <tr>
-    <td>Contribuciones</td>
-    <td>Firmas</td>
+    <td>Investigación previa</td>
+    <td>BOTIJA JAVIER</td>
   </tr>
   <tr>
-    <td>Contribuciones</td>
-    <td>Firmas</td>
+    <td>Redacción de las respuestas</td>
+    <td>BOTIJA JAVIER, SALINAS NELSON</td>
   </tr>
   <tr>
-    <td>Contribuciones</td>
-    <td>Firmas</td>
+    <td>Desarrollo código</td>
+    <td>BOTIJA JAVIER, SALINAS NELSON</td>
   </tr>  
 </table>
 
