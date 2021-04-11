@@ -27,7 +27,7 @@ Se dará uso del lenguaje R, para poder establecer el modelo de regresion lineal
 Su nombre se destaca como valores históricos de commodities en la bolsa de valores.
 
 ## 3.- Descripción del Dataset
-El dataset comprende valores históricos para cada commoditie con la finalidad que sea utilizado por el lenguaje R, para fines de analisis con herramientas de predicción de datos, se toma en consideracion el valor de precio de cierre del mercado.
+El dataset comprende valores históricos para cada commoditie con la finalidad que sea utilizado por el lenguaje R, para fines de análisis con herramientas de predicción de datos, se toma en consideracion el valor de precio de cierre del mercado.
 
 ## 4.- Representación gráfica
 ![Aquí la descripción de la imagen por si no carga](https://raw.githubusercontent.com/NelsonSalinas1987/PEC2-TIPOLOGIA/main/images/scraping-pec.png)
