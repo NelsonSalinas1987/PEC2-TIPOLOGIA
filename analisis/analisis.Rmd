@@ -1,0 +1,120 @@
+---
+title: "PEC2 Tipología de datos - Análisis de dataset"
+author: "PEC2-GRUPO"
+date: "03/04/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## 1.-Carga de archivo
+
+En el siguiente apartado se muestra la carga de archivo de datos desde el csv extraido.
+
+```{r}
+archivo<-"C:/Users/HITSCORPTECH/Documents/valores_historicos_de_commodities_en_la_bolsa_de _valores.csv"
+datos<-read.csv(archivo,header=TRUE,',')
+head(datos,3)
+```
+
+Se procede a observar los tipos de variables, los cuales consta de 1200 observaciones y 8 variables.
+
+```{r}
+str(datos)
+
+```
+
+Se procede a dar formato a la variable date
+```{r}
+datos$date<-as.Date(datos$date,"%d/%m/%Y")
+
+```
+
+## 2.-Separación de datos
+
+Se crea un nuevo dataframe para obtener los valores de date,name,open,close
+```{r}
+library(reshape)
+data1<-data.frame(datos$date,datos$name,datos$open,datos$close)
+data2 = rename(data1, c(datos.date="fecha",datos.name="materia",datos.open='abre',datos.close="cierre"))
+head(data2)
+
+```
+
+### 2.1-Análisis de Oro
+
+Se procede a extraer toda la información referente al oro para el análisis de regresión lineal
+
+```{r}
+oro<-subset(data2,data2$materia=="Oro",select = c(fecha,materia,abre,cierre))
+head(oro)
+tail(oro)
+```
+
+### 2.1.1 -Gráfico de dispersión y correlación de Pearson
+
+En el siguiente apartado se puede observar que las variables de apertura y cierre del precio de Oro estan extremadamente relacionadas, como se muestra en la siguiente ilustración:
+
+```{r}
+plot(oro$abre~oro$cierre)
+cor.test(oro$abre,oro$cierre)
+```
+La correlación de Pearson, detalla claramente una correlación directamente alta con el 0.95, por lo que se puede rechazar la hipótesis nula y aceptar la correlación en donde destaca que el precio de apertura tiene relación con el precio de cierre.
+
+```{r}
+modelooro<-lm(oro$abre~oro$cierre)
+summary(modelooro)
+```
+En un 90% de R cuadrado ajustado, la variable "y" es explicada con la variable "x". Se procede a obtener los coeficientes.
+
+```{r}
+modelooro$coefficients
+
+```
+Según la formula y=a+b(x), reemplazando valores seria, y=82.54+0.95(x), por lo que si cierra en 1712, es muy probable que abra en:
+
+```{r}
+82.5438+(0.95*1712)
+
+```
+Con este resultado podemos determinar que para el siguiente día el precio del oro estaría abriendo con un valor de 1708.94 dólares.
+
+### 2.2-Analisis de Soja
+
+Se procede a extraer toda la información referente a la Soja para el análisis de regresión lineal
+
+```{r}
+soja<-subset(data2,data2$materia=="Soja",select = c(fecha,materia,abre,cierre))
+head(soja)
+tail(soja)
+```
+
+### 2.2.1 -Gráfico de dispersión y correlación de Pearson
+
+En el siguiente apartado se puede observar que las variables de apertura y cierre del precio de Soja estan extremadamente relacionadas, como se muestra en la siguiente ilustración:
+
+```{r}
+plot(soja$abre~soja$cierre)
+cor.test(soja$abre,soja$cierre)
+```
+La correlación de Pearson, detalla claramente una correlación directamente alta con el 0.98 bastante cerca a 1, por lo que se puede rechazar la hipetesis nula y aceptar la correlación en donde destaca que el precio de apertura tiene relación con el precio de cierre.
+
+```{r}
+modelosoja<-lm(soja$abre~soja$cierre)
+summary(modelosoja)
+```
+
+En un 97% de R cuadrado ajustado, la variable "y" es explicada con la variable "x". Se procede a obtener los coeficientes.
+
+```{r}
+modelosoja$coefficients
+
+```
+Según la fórmula y=a+b(x), reemplazando valores seria y=-6.0676+1.003(x), por lo que si cierra en 1420 para el siguiente día, es muy probable que abra en:
+
+```{r}
+-6.0676+(1.003*1420)
+
+```
+Con este resultado podemos determinar que para el siguiente día el precio de la Soja estaría abriendo con un valor de 1418.19 dólares.
+
