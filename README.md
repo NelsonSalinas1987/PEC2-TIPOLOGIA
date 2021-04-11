@@ -20,8 +20,8 @@ En la bolsa de valores existen grandes mercados para la inversión y movimientos
 El desarrollo de este trabajo se basa dentro del marco de analísis de informacion de cotizaciones historicas (4 meses) de comodities o materias primas tales como el arroz, soja, aceite de soja, cacao, café, algodon, azucar, oro, petroleo, gas natural, plata y gasolina con el fin de poder predecir en un periodo de tiempo los resultados probables que puedan existir para así tener una mejor visión en la toma de decisiones para la inversión a largo plazo. La web donde se obtendran los datos es Yahoo Finanzas https://es.finance.yahoo.com/. Para poder desarrollar el proyecto se dara pie al uso del websraping para la extracción de información de forma automática con el fin de obtener los datos más rapidamente y que el usuario o consumidor sea dueño de su propio análisis, mucho más alla de las interpretaciones que tienen otros analistas. Se toma en consideración el respeto y buen uso del scraping con el fin de evitar abuso o consumo excesivo de la pagina web, sin sobresaturar las peticiones web.
 
 Se dará uso del lenguaje R, para poder establecer el modelo de regresion lineal simple para el analisis de predicciones, por fines educativos se tomará en consideración el analisis para los principales commodities:
-1. Petróleo
-2. Café
+1. Oro
+2. Arroz
 
 Los demas commodities que se encuentran en el dataset, tendran una representación con series temporales.
 
