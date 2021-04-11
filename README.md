@@ -21,7 +21,7 @@ El desarrollo de este trabajo se basa dentro del marco de analísis de informaci
 
 Se dará uso del lenguaje R, para poder establecer el modelo de regresion lineal simple para el analisis de predicciones, por fines educativos se tomará en consideración el analisis para los principales commodities:
 1. Oro
-2. Arroz
+2. Soja
 
 ## 2.- Dataset
 Su nombre se destaca como valores históricos de commodities en la bolsa de valores.
