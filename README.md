@@ -59,6 +59,8 @@ Se considera necesario el aporte de otras personas que puedan crear mayor conoci
 
 ## 9.- Código
 Se adjunta el codigo en lenguaje Python y R.
+* Python en la carpeta bin
+* R en la carpera analisis
 
 ## 10.- DOI Dataset
 DOI: 10.5281/zenodo.4662174
