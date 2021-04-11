@@ -62,3 +62,4 @@ Se adjunta el codigo en lenguaje Python y R.
 
 ## 10.- DOI Dataset
 DOI: 10.5281/zenodo.4662174
+Zenodo. http://doi.org/10.5281/zenodo.4662174
