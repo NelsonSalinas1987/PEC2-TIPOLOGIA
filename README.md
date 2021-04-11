@@ -23,8 +23,6 @@ Se dará uso del lenguaje R, para poder establecer el modelo de regresion lineal
 1. Oro
 2. Arroz
 
-Los demas commodities que se encuentran en el dataset, tendran una representación con series temporales.
-
 ## 2.- Dataset
 Su nombre se destaca como valores históricos de commodities en la bolsa de valores.
 
