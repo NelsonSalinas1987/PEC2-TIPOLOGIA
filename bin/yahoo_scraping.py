@@ -86,7 +86,7 @@ def s_to_n(sfield):
     if sfield == '-': # si viene un guión, devolvemos nulo
         return None
     else: # quitamos puntos y sustituimos comas por punto
-        return sfield.replace('.','').replace(',','.')
+        return sfield.replace('.', '').replace(',', '.')
 
 
 def start():
@@ -95,38 +95,45 @@ def start():
     :return: none
     """
     # cargamos los símbolos a recuperar
-    symbols = pd.read_csv('../data/symbols.csv', header=0)
     # fichero a generar
-    fileName = r"../data/historical_prices.csv"
+    fileName = r"./data/symbols.csv"
     fileObj = Path(fileName)
-    if fileObj.exists(): # si existe lo abrimos
-        prices = pd.read_csv('../data/historical_prices.csv', header=0)
-    else:  # si no existe, creamos el dataframe de cero
-        prices = pd.DataFrame(columns=['name', 'date', 'open', 'max', 'min', 'close', 'adjclose', 'volume'])
+    if fileObj.exists():  # si existe lo abrimos
+        symbols = pd.read_csv(fileName, header=0)
+        # fichero a generar
+        fileName = r"./data/historical_prices.csv"
+        fileObj = Path(fileName)
+        if fileObj.exists():  # si existe lo abrimos
+            prices = pd.read_csv(fileName, header=0)
+        else:  # si no existe, creamos el dataframe de cero
+            prices = pd.DataFrame(columns=['name', 'date', 'open', 'max', 'min', 'close', 'adjclose', 'volume'])
 
-    # Opciones de navegación
-    options = webdriver.ChromeOptions()
-    options.add_argument('--start-maximized')
-    options.add_argument('--disabled-extensions')
-    # abrimos el navegador del driver
-    driver_path = 'chromedriver3'
-    driver = webdriver.Chrome(driver_path, chrome_options=options)
+        # Opciones de navegación
+        options = webdriver.ChromeOptions()
+        options.add_argument('--start-maximized')
+        options.add_argument('--disabled-extensions')
+        # abrimos el navegador del driver
+        driver_path = './bin/chromedriver3'
+        driver = webdriver.Chrome(driver_path, chrome_options=options)
 
-    # entramos en la página inicial de materias primas
-    driver.get('https://es.finance.yahoo.com/materias-primas')
-    time.sleep(sleep_time)
-    # aceptamos la cookies
-    WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR,
-                                                               'button.btn.primary'))) \
-        .click()
-    # recorremos los símbolos a guardar
-    for index, row in symbols.iterrows():
-        print('recuperando: ' + row[1] + '->' + row[0])
-        scraping_symbol(driver, prices, row[0], row[1])
-    # salvamos el dataframe de los precios
-    prices.to_csv('../data/historical_prices.csv', index=False)
-    # cerramos el driver
-    driver.quit()
+        # entramos en la página inicial de materias primas
+        driver.get('https://es.finance.yahoo.com/materias-primas')
+        time.sleep(sleep_time)
+        # aceptamos la cookies
+        WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR,
+                                                                   'button.btn.primary'))) \
+            .click()
+        # recorremos los símbolos a guardar
+        for index, row in symbols.iterrows():
+            print('recuperando: ' + row[1] + '->' + row[0])
+            scraping_symbol(driver, prices, row[0], row[1])
+        # salvamos el dataframe de los precios
+        prices.to_csv(fileName, index=False)
+        # cerramos el driver
+        driver.quit()
+    else:
+        print('Error: no existe el fichero de símbolos ' + fileName)
+
 
 # tiempo de espera
 sleep_time = 0.5

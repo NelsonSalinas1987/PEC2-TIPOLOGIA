@@ -12,12 +12,12 @@ output:
 En el siguiente apartado se muestra la carga de archivo de datos desde el csv extraido.
 
 ```{r}
-archivo<-"C:/Users/HITSCORPTECH/Documents/valores_historicos_de_commodities_en_la_bolsa_de _valores.csv"
+archivo<-"./../data/historical_prices.csv"
 datos<-read.csv(archivo,header=TRUE,',')
 head(datos,3)
 ```
 
-Se procede a observar los tipos de variables, los cuales consta de 1200 observaciones y 8 variables.
+Se procede a observar los tipos de variables, los cuales consta de 1100 observaciones y 8 variables.
 
 ```{r}
 str(datos)
@@ -59,25 +59,25 @@ En el siguiente apartado se puede observar que las variables de apertura y cierr
 plot(oro$abre~oro$cierre)
 cor.test(oro$abre,oro$cierre)
 ```
-La correlación de Pearson, detalla claramente una correlación directamente alta con el 0.95, por lo que se puede rechazar la hipótesis nula y aceptar la correlación en donde destaca que el precio de apertura tiene relación con el precio de cierre.
+La correlación de Pearson, detalla claramente una correlación directamente alta con el 0.96, por lo que se puede rechazar la hipótesis nula y aceptar la correlación en donde destaca que el precio de apertura tiene relación con el precio de cierre.
 
 ```{r}
 modelooro<-lm(oro$abre~oro$cierre)
 summary(modelooro)
 ```
-En un 90% de R cuadrado ajustado, la variable "y" es explicada con la variable "x". Se procede a obtener los coeficientes.
+En un 92% de R cuadrado ajustado, la variable "y" es explicada con la variable "x". Se procede a obtener los coeficientes.
 
 ```{r}
 modelooro$coefficients
 
 ```
-Según la formula y=a+b(x), reemplazando valores seria, y=82.54+0.95(x), por lo que si cierra en 1712, es muy probable que abra en:
+Según la formula y=a+b(x), reemplazando valores seria, y=38.23+0.98(x), por lo que si cierra en 1712, es muy probable que abra en:
 
 ```{r}
-82.5438+(0.95*1712)
+38.23+(0.98*1712)
 
 ```
-Con este resultado podemos determinar que para el siguiente día el precio del oro estaría abriendo con un valor de 1708.94 dólares.
+Con este resultado podemos determinar que para el siguiente día el precio del oro estaría abriendo con un valor de 1715.99 dólares.
 
 ### 2.2-Analisis de Soja
 
@@ -104,17 +104,28 @@ modelosoja<-lm(soja$abre~soja$cierre)
 summary(modelosoja)
 ```
 
-En un 97% de R cuadrado ajustado, la variable "y" es explicada con la variable "x". Se procede a obtener los coeficientes.
+En un 96% de R cuadrado ajustado, la variable "y" es explicada con la variable "x". Se procede a obtener los coeficientes.
 
 ```{r}
 modelosoja$coefficients
 
 ```
-Según la fórmula y=a+b(x), reemplazando valores seria y=-6.0676+1.003(x), por lo que si cierra en 1420 para el siguiente día, es muy probable que abra en:
+Según la fórmula y=a+b(x), reemplazando valores seria y=3.60+0.997(x), por lo que si cierra en 1420 para el siguiente día, es muy probable que abra en:
 
 ```{r}
--6.0676+(1.003*1420)
+3.60+(0.997*1420)
 
 ```
-Con este resultado podemos determinar que para el siguiente día el precio de la Soja estaría abriendo con un valor de 1418.19 dólares.
+Con este resultado podemos determinar que para el siguiente día el precio de la Soja estaría abriendo con un valor de 1419.34 dólares.
 
+```{r}
+
+union = merge(x = oro, y = soja, by = "fecha", suffixes = c(".oro",".soja"))
+
+plot(union$cierre.oro~union$cierre.soja)
+cor.test(union$cierre.oro,union$cierre.soja)
+
+```
+En este caso, la correlación de Pearson nos muestra una correlación negativa baja (-0.55), por lo que en este caso no se puede rechazar la hipetesis nula. 
+
+Este análisis se podría realizar con todas las materias primas, y lo dejamos para un estudio posterior.

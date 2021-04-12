@@ -43,7 +43,7 @@ El dataset comprende de varias columnas tales como:
 7. AdjClose: Indica el precio de cierre ajustado.
 8. Volume: Representa la fuerza que tuvo el precio en un determinado tiempo, muy util para determina si es alcista o bajista.
 
-El periodo de tiempo en el que se recopilo la información es desde 05/11/2021 al 31/03/2021, lo que corresponde aproximandame 4 meses. Para la recopilación de los datos se uso las técnicas de web scraping, ademas como complementos en Python se integro Selenium y el driver de Google Chrome.
+El periodo de tiempo en el que se recopilo la información es desde 16/11/2020 al 12/04/2021, lo que corresponde aproximandame 5 meses. Para la recopilación de los datos se uso las técnicas de web scraping, ademas como complementos en Python se integro Selenium y el driver de Google Chrome.
 
 ## 6.- Agradecimientos
 Damos gracias a Yahoo Finanzas por darnos la oportunidad de poder extraer de forma automática los datos de las materias primas para el desarrollo de este trabajo. Es válido destacar que los mismos datos pueden ser obtenidos por otras fuentes según las necesidades del analista. Además debido a los constantes cambios tecnológicos, ya la inteligencia artificial en base al analisis de datos predictivos, está tomando lugar dentro del mercado bursátil.
@@ -63,8 +63,9 @@ Se adjunta el codigo en lenguaje Python y R.
 * R en la carpera analisis
 
 ## 10.- DOI Dataset
-DOI: 10.5281/zenodo.4662174
-Zenodo. http://doi.org/10.5281/zenodo.4662174
+DOI: 10.5281/zenodo.4681808
+
+Zenodo. http://doi.org/10.5281/zenodo.4681808
 
 <table>
   <tr>
